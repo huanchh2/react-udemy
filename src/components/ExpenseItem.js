@@ -1,6 +1,6 @@
 //a Component is just a function
 import './ExpenseItem.css'
-
+import ExpenseDate  from './ExpenseDate';
 
 function ExpenseItem(props) {
   //must have one root element per JSX
@@ -8,17 +8,12 @@ function ExpenseItem(props) {
   //const expenseTitle = 'Car Insurance'
   //const expenseAmount = 294.67
 
-  const month = props.date.toLocaleString('en-US', { month: 'long'});
-  const day = props.date.toLocaleString('en-US', { day: '2-digit'});
-  const year = props.date.getFullYear();
-
+  
 
   //JSX, do not specify class, specify className
   return (
     <div className="expense-item">
-      <div>{month}</div>
-      <div>{year}</div>
-      <div>{day}</div>
+      <ExpenseDate date={props.date}/>
       <div className='expense-item__description'>
       <h2>{Math.random()}</h2>
       <h2>{props.tile}</h2>
