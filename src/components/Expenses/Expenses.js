@@ -4,6 +4,7 @@ import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import React, { useState } from "react";
 import ExpensesChart from "./ExpensesChart";
+//import Wrapper from "../Helpers/Wrapper";
 
 function Expenses(props) {
   console.log("expense called !! ");
@@ -38,7 +39,8 @@ function Expenses(props) {
 
   return (
     //&& is a JS trick where if first thing eval to true, second thing is printed out
-    <div>
+    //<Wrapper>
+    <React.Fragment>
       <Card className="expenses">
         <ExpensesFilter
           selected={filteredYear}
@@ -47,7 +49,8 @@ function Expenses(props) {
         <ExpensesChart expenses={filteredExpenses}></ExpensesChart>
         {expenseJSX}
       </Card>
-    </div>
+    </React.Fragment>
+    //</Wrapper>
   );
 }
 
